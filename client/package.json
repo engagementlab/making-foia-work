@@ -1,9 +1,11 @@
 {
-  "name": "making-foia-work-client",
-  "version": "0.0.0",
+  "name": "make-foia-work-client",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm-run-all -l -p browser api",
+    "browser": "ng serve",
+    "api": "cd ../server; nodemon",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

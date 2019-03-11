@@ -1,6 +1,4 @@
-<!-- [![Project logo](https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_450/v1543629182/homepage-2.0/logos/el-logo.svg "Project logo")](https://elab.emerson.edu/) -->
-
-# [https://makefoia.work](Making FOIA Work)
+[![Project logo](https://res.cloudinary.com/engagement-lab-home/image/upload/c_scale,f_auto,w_200/v1552333616/make-foia-work/logo.png "Make FOIA Work logo")](https://makefoia.work)
 
 Website for collaboration with MuckRock and Boston Institute for Nonprofit Journalism.
 

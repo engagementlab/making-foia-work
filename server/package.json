@@ -1,5 +1,5 @@
 {
-  "name": "beta-blocks",
+  "name": "make-foia-work-server",
   "version": "0.0.1",
   "main": "app.js",
   "license": "MIT",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/engagementlab/beta-blocks.git"
+    "url": "git+https://github.com/engagementlab/make-foia-work.git"
   },
   "dependencies": {
     "@engagementlab/el-bootstrapper": "^0.0.5",

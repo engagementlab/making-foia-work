@@ -1,0 +1,24 @@
+.column-logo {
+    margin: 0;
+    position: fixed;
+}
+.column-nav-desktop {
+    margin: 0;
+    top: 35%;
+    right: 0;
+    position: fixed;
+    /*@include mobile-only {
+        display: none;
+    }*/
+}
+.column-nav-mobile {
+    margin: 0;
+    display: none;
+    /*@include mobile-only {
+        display: block;
+    }*/
+}
+.column-content, .column-article-1, .column-article-2, .column-article-3 {
+    padding-left: 30%;
+
+}

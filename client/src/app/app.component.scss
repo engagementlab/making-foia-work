@@ -1,11 +1,5 @@
 @import '../style/variables';
 
-.column-logo {
-    margin: 0;
-    position: fixed;
-}
-
-
 #logo-mobile {
     position: absolute;
     padding: 2%;
@@ -24,6 +18,29 @@
     text-align: left;
 
     margin-top: -25%;
+}
+
+.about-btn {
+    font-family: 'ProFont';
+    cursor: pointer;
+
+    background-color: black;
+    color: white;
+    
+    border: none;
+    font-size: 3em;
+
+    padding-top: 3%;
+    // padding-bottom: 3%;
+
+    width: 50px;
+    
+    &#about-mobile {
+        position: absolute;
+        // padding: 2%;
+        top: 0;
+        right: 0;
+    }
 }
 
 .bg {

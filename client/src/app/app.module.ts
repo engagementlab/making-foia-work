@@ -9,6 +9,8 @@ import cloudinaryConfiguration from './cdn.config';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CdnImageComponent } from './utils/cdn-image/cdn-image.component';
+import { DataService } from './utils/data.service';
+import { HttpClientModule } from '@angular/common/http';
 
 export const cloudinary = {
   Cloudinary: CloudinaryCore
@@ -23,9 +25,13 @@ export const config: CloudinaryConfiguration = cloudinaryConfiguration;
   imports: [
     AppRoutingModule,
     BrowserModule,
-    CloudinaryModule.forRoot(cloudinary, config)
+    CloudinaryModule.forRoot(cloudinary, config),
+    HttpClientModule
   ],
-  providers: [],
+  
+  providers: [
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

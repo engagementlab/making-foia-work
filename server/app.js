@@ -44,7 +44,7 @@ bootstrap.start(
 	app,
 	__dirname + '/', 
 	{
-		'name': 'Make FOIA Work API server CMS'
+		'name': 'Make FOIA Work CMS'
 	},
 	() => {
 		app.listen(process.env.PORT);

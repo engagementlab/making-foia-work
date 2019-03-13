@@ -5,3 +5,26 @@ $tablet: 768px;
 @import "~bulma/sass/elements/container";
 
 @import '_variables';
+
+body {
+
+    margin: 0;
+    font-size: 24px;
+
+    @include mobile-only {
+        font-size: 18px;
+    }
+}
+
+// Font classes
+.pro-font {
+    font-family: 'ProFont';
+}
+
+// Bulma container adjustments
+.container {
+    @include not-desktop {
+        // margin-left: 3%;
+        // margin-right: 3%;
+    }
+}

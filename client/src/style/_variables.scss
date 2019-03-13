@@ -1,8 +1,22 @@
 // CDN CONFIG
 $cloudinary-account: 'engagement-lab-home';
-$cdn-product: 'making-foia-work';
+$cdn-product: 'make-foia-work';
 
-// @import url('https://fonts.googleapis.com/css?family=Overpass:400,600,900');
+// FONT CONFIG
+$base-font-size: 24;
+$base-font-size-mobile: 18;
+
+@mixin pxtoem($mobile, $desktop: $base-font-size) {
+    font-size: ($desktop / $base-font-size) + em;
+    @include mq($until: tabletPortrait) {
+        font-size: ($mobile / $base-font-size-mobile) + em;
+    }
+}
+
+@font-face {
+    font-family: 'ProFont';
+    src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/make-foia-work/fonts/ProFontWindows.ttf') format('truetype'); /* Safari, Android, iOS */
+}
 
 $mq-breakpoints: (
     mobile:  320px,

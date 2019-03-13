@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  qa: false,
-  dev: true
+  qa: true,
+  dev: false
 };
 
 /*

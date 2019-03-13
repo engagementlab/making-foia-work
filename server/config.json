@@ -1,5 +1,4 @@
 {
 	"name": "Make FOIA Work API server",
-	"database": "make-foia-work",
-	"adminPath": "cms"
+	"database": "make-foia-work"
 }

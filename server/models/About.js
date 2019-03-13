@@ -22,8 +22,8 @@ var Types = keystone.Field.Types;
  */
 var About = new keystone.List('About', 
 	{
-		label: 'About Page',
-		singular: 'About Page',
+		label: 'About',
+		singular: 'About',
 		nodelete: true,
 		nocreate: true
 	});
@@ -34,8 +34,9 @@ var About = new keystone.List('About',
  */
 About.add({
 	
-	name: { type: String, default: "About Page", hidden: true, required: true, initial: true },
-	intro: { type: Types.Textarea, label: 'Intro Text', required: true, initial: true}
+	name: { type: String, default: "About", hidden: true, required: true, initial: true },
+	intro: { type: String, label: 'Intro Text', required: true, initial: true},
+	description: { type: Types.Textarea, label: 'Description Text', required: true, initial: true}
 });
 
 /**

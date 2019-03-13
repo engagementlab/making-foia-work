@@ -1,7 +1,74 @@
+@import '../style/variables';
+
 .column-logo {
     margin: 0;
     position: fixed;
 }
+
+
+#logo-mobile {
+    position: absolute;
+    padding: 2%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+#description {
+    @include pxtoem(24, 48);
+    background-color: white; 
+    
+    position: relative;
+    z-index: 2;
+    text-transform: uppercase;
+    text-align: left;
+
+    margin-top: -25%;
+}
+
+.bg {
+    background-image: cdn-image('img/notebook', f_auto, c_scale, w_1280);
+    background-size: cover;
+
+    padding: 0;
+    padding-top: 5%;
+
+    @include mobile-only {
+        padding: 5%;
+    }
+    #description { 
+
+        margin-top: -15%;
+
+        width: 50%;
+        max-width: 50%;
+        
+    }
+}
+
+@include not-phones {
+    #left {
+        background-image: cdn-image('img/line', f_auto, c_scale);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+    }
+}
+
+@include phones {
+    #center {
+        background-image: cdn-image('img/line', f_auto, c_scale);
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+    }
+    #intro {
+        margin-left: 15%;
+    }
+}
+
+#chain {
+    position: absolute;
+}
+
 .column-nav-desktop {
     margin: 0;
     top: 35%;
@@ -17,8 +84,4 @@
     /*@include mobile-only {
         display: block;
     }*/
-}
-.column-content, .column-article-1, .column-article-2, .column-article-3 {
-    padding-left: 30%;
-
 }

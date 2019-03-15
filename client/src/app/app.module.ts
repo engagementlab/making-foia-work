@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { CdnImageComponent } from './utils/cdn-image/cdn-image.component';
 import { DataService } from './utils/data.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonComponent } from './utils/app-button/button.component';
 
 export const cloudinary = {
   Cloudinary: CloudinaryCore
@@ -20,6 +21,7 @@ export const config: CloudinaryConfiguration = cloudinaryConfiguration;
 @NgModule({
   declarations: [
     AppComponent,
+    ButtonComponent,
     CdnImageComponent
   ],
   imports: [

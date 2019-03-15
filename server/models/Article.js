@@ -34,6 +34,7 @@ Article.add({
 	
 	name: { type: String, default: "Article Name", required: true, initial: true },
 	description: { type: Types.Textarea, required: true, initial: true},
+	image: { type: Types.CloudinaryImage, folder: 'make-foia-work/articles' },
 	url: { type: Types.Url, label: "URL to Article", required: true, initial: true}
 });
 

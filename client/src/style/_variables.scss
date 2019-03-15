@@ -13,6 +13,12 @@ $base-font-size-mobile: 18;
     }
 }
 
+@mixin ngImg {
+    ::ng-deep img {
+        @content;
+    }
+}
+
 @font-face {
     font-family: 'ProFont';
     src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/make-foia-work/fonts/ProFontWindows.ttf') format('truetype'); /* Safari, Android, iOS */
@@ -20,6 +26,10 @@ $base-font-size-mobile: 18;
 @font-face {
     font-family: 'Bifocals';
     src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/make-foia-work/fonts/Bifocals.otf') format('opentype'); /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'Bifocals-Black';
+    src: url('https://res.cloudinary.com/engagement-lab-home/raw/upload/make-foia-work/fonts/Bifocals-Black.otf') format('opentype'); /* Safari, Android, iOS */
 }
 @font-face {
     font-family: 'Nunito';

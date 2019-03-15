@@ -10,30 +10,23 @@
 
 #description {
     @include pxtoem(24, 48);
-    background-color: white; 
-    
+    background-color: white;
     position: relative;
     z-index: 2;
     text-transform: uppercase;
     text-align: left;
-
     margin-top: -25%;
 }
-
 .about-btn {
     font-family: 'ProFont';
     cursor: pointer;
-
     background-color: black;
     color: white;
-    
     border: none;
     font-size: 3em;
-
     padding-top: 3%;
     // padding-bottom: 3%;
-
-    width: 50px;
+    width: 80px;
     
     &#about-mobile {
         position: absolute;
@@ -46,7 +39,6 @@
 .bg {
     background-image: cdn-image('img/notebook', f_auto, c_scale, w_1280);
     background-size: cover;
-
     padding: 0;
     padding-top: 5%;
 
@@ -56,15 +48,13 @@
     #description { 
 
         margin-top: -15%;
-
         width: 50%;
         max-width: 50%;
-        
     }
 }
 
 @include not-phones {
-    #left {
+    #center {
         background-image: cdn-image('img/line', f_auto, c_scale);
         background-repeat: no-repeat;
         background-position-x: 50%;
@@ -84,8 +74,13 @@
 
 #chain {
     position: absolute;
+    z-index: -1;
 }
-
+#header {
+    height: 50px;
+    font-family: Bifocals;
+    font-size: 36px;
+}
 .column-nav-desktop {
     margin: 0;
     top: 35%;

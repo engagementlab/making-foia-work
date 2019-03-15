@@ -1,56 +1,63 @@
 <cdn-image id="logo-mobile" cloudinaryId="img/logo" width="50" svg="true" alt="'Make FOIA Work' logo" class="hidden-not-mobile"></cdn-image>
-<button class="about-btn" id="about-mobile">i</button>
 
 <section id="content">
   <div class="columns is-full">
-    <div class="column is-2 hidden-mobile">
+    <div class="column is-1 hidden-mobile">
 
       <cdn-image cloudinaryId="img/logo" width="100" svg="true" alt="'Make FOIA Work' logo"></cdn-image>
+      <button class="about-btn" id="about-mobile">i</button>
 
     </div>
 
-    <div class="column is-8 center bg">
+    <div class="column is-10 center bg">
 
       <cdn-image cloudinaryId="img/grafitti-bg"></cdn-image>
 
       <!-- Tablet+ -->
       <div id="description" class="pro-font hidden-mobile">
-          re-designing information gathering and news reporting mechanisms around the FOIA process
-        </div>
-        
+        re-designing information gathering and news reporting mechanisms around the FOIA process
+      </div>
+
     </div>
-    
+
     <!-- Mobile -->
     <div id="description" class="column is-half-mobile pro-font hidden-not-mobile">
-        re-designing information gathering and news reporting mechanisms around the FOIA process
+      re-designing information gathering and news reporting mechanisms around the FOIA process
     </div>
+
   </div>
 
   <div class="columns is-full">
 
-      <div id="left" class="column is-one-third hidden-mobile">
+    <div id="left" class="column is-one-third center is-half-mobile hidden-mobile">
 
+    </div>
+
+    <div id="center" class="column is-full-mobile is-one-third-tablet">
+      <cdn-image id="chain" cloudinaryId="img/chainlink" width="74" class="hidden-not-mobile"></cdn-image>
+
+      <div id="header">
+        Our Stories
       </div>
-      <div id="center" class="column is-full-mobile is-one-third-tablet">
-        <cdn-image id="chain" cloudinaryId="img/chainlink" width="74" class="hidden-not-mobile"></cdn-image>
 
-        <div id="intro">
-            You can't have light without dark. You can't know happiness unless you've known sorrow. The only thing worse than yellow snow is green snow. Trees live in your fan brush, but you have to scare them out. There's not a thing in the world wrong with washing your brush. You can create anything that makes you happy.
+      <div id="intro">
+        Let your imagination just wonder around when you're doing these things. If there's two big trees invariably
+        sooner or later there's gonna be a little tree. Every day I learn. We'll throw some happy little limbs on this
+        tree. In nature, dead trees are just as normal as live trees. Work on one thing at a time. Don't get carried
+        away - we have plenty of time.
+      </div>
 
-            We'll do another happy little painting. Let's have a little bit of fun today. We touch the canvas, the canvas takes what it wants. By now you should be quite happy about what's happening here. Even trees need a friend. We all need friends. Give him a friend, we forget the trees get lonely too.
-        </div>
+      <!-- ngFor loop here for articles -->
+      <div class="article" *ngFor="let article of articles">
+        <h2>{{article.name}}</h2>
 
-        <!-- ngFor loop here for articles -->
-        <h2>Article Name</h2>
-          
         <cdn-image cloudinaryId="img/video" svg="true"></cdn-image>
-        <p>Let your imagination just wonder around when you're doing these things. If there's two big trees invariably sooner or later there's gonna be a little tree. Every day I learn. We'll throw some happy little limbs on this tree. In nature, dead trees are just as normal as live trees. Work on one thing at a time. Don't get carried away - we have plenty of time.</p>
-        <a href="http://google.com">link to article name</a>
+        <p>{{article.description}}</p>
+        <a href="{{article.url}}">link to article name</a>
       </div>
-
+    </div>
   </div>
-
-<!-- 
+  <!-- 
   <div class="page-home">
     <img src="../assets/images/foia-home.png">
   </div>
@@ -66,6 +73,6 @@
 </section>
 
 <footer>
-        Make FOIA Work<br />
-        engagementlab@emerson.edu — 120 Boylston St. Boston, MA 02116
+  Make FOIA Work<br />
+  engagementlab@emerson.edu — 120 Boylston St. Boston, MA 02116
 </footer>

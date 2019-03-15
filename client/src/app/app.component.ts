@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './utils/data.service';
 
+import * as ismobile from 'ismobilejs';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,9 +13,16 @@ export class AppComponent implements OnInit {
   public about: any[];
   public articles: any[];
   public guides: any[];
+  public linkWidth: number = 212;
+  
   title = 'Make FOIA Work';
 
-  constructor(private _dataSvc: DataService) {}
+  constructor(private _dataSvc: DataService) {
+
+   if(ismobile.phone)
+    this.linkWidth = 162;
+
+  }
 
   ngOnInit() {
   

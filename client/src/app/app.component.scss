@@ -17,12 +17,14 @@ h1 {
 #logo-mobile {
   position: absolute;
   padding: 2%;
+  padding-top: 5%;
+
   top: 0;
   left: 0;
   background-color: white;
 }
 
-#description {
+.description {
   @include pxtoem(24, 48);
   background-color: white;
   position: relative;
@@ -30,6 +32,15 @@ h1 {
   text-transform: uppercase;
   text-align: left;
   margin-top: -25%;
+
+  @include not-phones {
+    width: 60%;
+  }
+
+  &#description-mobile {
+    margin-top: -23%;
+    margin-left: 6%;
+  }
 }
 
 #nav {
@@ -37,24 +48,27 @@ h1 {
   justify-content: flex-end;
 }
 
-.about-btn {
+#about-btn {
+  position: absolute;
+  top: 40px;
+  right: 5%;
+  
   font-family: 'ProFont';
   cursor: pointer;
   background-color: black;
   color: white;
   border: none;
-  font-size: 3em;
-  margin-top: 40px;
-  width: 80px;
-  height: 80px;
+  font-size: 2em;
+  width: 50px;
+  height: 50px;
+
   text-align: center;
 
-  &#about-mobile {
-    position: absolute;
-    // padding: 2%;
+  @include phones {
     top: 0;
     right: 0;
   }
+
 }
 
 .bg {
@@ -68,7 +82,8 @@ h1 {
   }
 
   @include mobile-only {
-    padding: 5%;
+    padding: 2%;
+    padding-top: 7%;
   }
 
   #description {
@@ -90,7 +105,7 @@ h1 {
     background-image: cdn-image('img/line', f_auto, c_scale);
     background-repeat: repeat-y;
     background-position-x: 50%;
-    
+
     padding-bottom: 14%;
   }
 }
@@ -120,20 +135,38 @@ h1 {
   }
 
   a {
+    display: block;
     color: black;
     text-decoration: none;
+
+    svg {
+      @include transition(transform, .4s, ease-in-out);
+      transform-origin: left;
+    }
+
+    &:hover {
+      svg {
+        @include scale(1.2);
+      }
+    }
   }
 
   @include ngImg {
     max-height: 480px;
   }
 
-  .bottom {
-    margin-top: 14%;
+  @include not-phones {
+    .bottom {
+      margin-top: 14%;
+    }
   }
-  
+
   &:not(:first-of-type) {
-    margin-top: 20%;
+    margin-top: 12%;
+
+    @include not-phones {
+      margin-top: 20%;
+    }
   }
 }
 
@@ -151,48 +184,71 @@ h1 {
     justify-content: left;
 
     margin-top: 12%;
-    padding: 0;
+    
+    @include phones {
+      @include ngImg {
+        max-width: 50%;
+      }
 
-    &:nth-child(even) {
-      .column {
-        &:nth-child(2) {
-          margin-left: 8.33333333%;
-        }
+      .btn {
+        width: 100%;
+        margin-top: 13%;
+        text-align: center;
       }
     }
+    
+    @include not-phones {
+      padding: 0;
 
-    &:nth-child(odd) {
-      flex-direction: row-reverse;
-
-      .column {
-        &:nth-child(1) {
-          margin-left: 8.33333333%;
+      &:nth-child(even) {
+        .column {
+          &:nth-child(2) {
+            margin-left: 8.3%;
+          }
         }
       }
+
+      &:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        .column {
+          &:nth-child(1) {
+            margin-left: 8.3%;
+          }
+        }
+      }
+
     }
 
   }
 
   h2 {
     text-transform: uppercase;
-    @include pxtoem(24, 24);
+    @include pxtoem(18, 24);
   }
 
   p {
-    @include pxtoem(24, 16);
-    margin-top: 25%;
-    margin-bottom: 10%;
+    @include pxtoem(12, 16);
+
+    @include not-phones {
+      margin-top: 25%;
+      margin-bottom: 10%;
+    }
   }
 }
 
 footer {
 
   font-family: ProFont;
-  @include pxtoem(48, 48);
+  @include pxtoem(18, 48);
 
   text-transform: uppercase;
   color: #c4c4c4;
 
   margin-top: 20%;
+
+  #email {
+    word-wrap: break-word;
+  }
 
 }

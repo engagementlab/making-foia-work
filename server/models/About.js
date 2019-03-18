@@ -35,8 +35,9 @@ var About = new keystone.List('About',
 About.add({
 	
 	name: { type: String, default: "About", hidden: true, required: true, initial: true },
-	intro: { type: String, label: 'Intro Text', required: true, initial: true},
-	description: { type: Types.Textarea, label: 'Description Text', required: true, initial: true}
+	intro: { type: String, label: 'Site Intro Text', required: true, initial: true},
+	description: { type: Types.Markdown, label: 'Description Text', required: true, initial: true},
+	who: { type: Types.Markdown, label: 'Who Was Involved Text', required: true, initial: true}
 });
 
 /**

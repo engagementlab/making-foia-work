@@ -16,13 +16,15 @@ mongoose.Promise = require('bluebird');
 
 var buildData = (res) => {
 
-let aboutFields = 'intro description -_id';
+let aboutFields = 'intro description.html who.html -_id';
 let articleFields = 'name description image.public_id url -_id';
 let guideFields = 'name description image.public_id file.url -_id';
+let videoFields = 'name description url -_id';
 
 let about = keystone.list('About').model;
 let article = keystone.list('Article').model;
 let guide = keystone.list('Guide').model;
+let video = keystone.list('Video').model;
 
 // Get about
 let aboutData = about.findOne({}, aboutFields);
@@ -30,11 +32,14 @@ let aboutData = about.findOne({}, aboutFields);
 let articleData = article.find({}, articleFields);
 // Get all guides
 let guideData = guide.find({}, guideFields);
+// Get all videps
+let videoData = video.find({}, videoFields);
 
 Bluebird.props({
         about: aboutData,
         articles: articleData,
-        guides: guideData
+        guides: guideData,
+        videos: videoData
     })
     .then(results => {
         if(!results)

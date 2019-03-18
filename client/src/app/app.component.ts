@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './utils/data.service';
 
 import * as ismobile from 'ismobilejs';
+import * as _ from 'underscore';
+import * as embed from 'embed-video';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +12,10 @@ import * as ismobile from 'ismobilejs';
 })
 export class AppComponent implements OnInit {
   
-  public about: any[];
+  public about: any;
   public articles: any[];
   public guides: any[];
+  public videos: any[];
   public linkWidth: number = 212;
   
   title = 'Make FOIA Work';
@@ -31,8 +34,24 @@ export class AppComponent implements OnInit {
       this.about = response.about;
       this.articles = response.articles;
       this.guides = response.guides;
+      
+      
+      _.each(response.videos, (video: any) => {
+        video.frame = embed.vimeo(video.url);
+        console.log(video.frame)
+      })
+      this.videos = response.videos;
+
 
     });
 
   }
+
+  openCloseAbout() {
+
+    document.getElementById('about').classList.toggle('open');
+    // document.getElementById('about').classList.toggle('open');
+
+  }
+
 }

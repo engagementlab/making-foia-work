@@ -1,5 +1,5 @@
 <section id="about">
-  
+
   <div id="close-btn" (click)="openCloseAbout();">x</div>
 
   <div id="content">
@@ -48,9 +48,13 @@
 
     <div class="column is-8-tablet is-9-desktop is-full-mobile center bg">
 
+      <cdn-image id="scribble" cloudinaryId="img/scribble" svg="true" width="82" class="hidden-mobile"></cdn-image>
       <cdn-image cloudinaryId="img/grafitti-bg"></cdn-image>
-      <cdn-image id="smiley" cloudinaryId="img/smileyface" svg="true" phoneWidth="40"></cdn-image>
+      <cdn-image id="smiley" cloudinaryId="img/smileyface" svg="true" width="98" phoneWidth="40"></cdn-image>
 
+      <div id="description" class="description column is-full-tablet is-half-desktop pro-font hidden-mobile">
+      {{about?.intro}}
+        </div>
     </div>
 
     <!-- Mobile -->
@@ -60,7 +64,7 @@
 
   </div>
 
-  <div class="columns column is-mobile is-full-mobile is-offset-2-tablet is-9-tablet">
+  <div class="columns column is-mobile is-full-mobile is-offset-1-tablet is-offset-2-desktop is-9-tablet">
 
     <div id="center" class="column">
 
@@ -70,10 +74,10 @@
 
       <!-- Articles -->
       <div class="article columns is-multiline" *ngFor="let article of articles; let first = first;">
-        <cdn-image id="chain" cloudinaryId="img/chainlink" svg="true" phoneWidth="59" width="74" *ngIf="first"></cdn-image>
-        
+        <cdn-image id="chain" cloudinaryId="img/chainlink" svg="true" phoneWidth="59" width="166" *ngIf="first"></cdn-image>
+
         <cdn-image class="column is-full" cloudinaryPrefix="/" cloudinaryId="{{article.image.public_id}}" autoFormat="true"
-          height="480"></cdn-image>  
+          height="480"></cdn-image>
 
         <div class="bottom column columns">
           <div class="column is-half">
@@ -101,29 +105,32 @@
 
 <section id="guides">
   <div class="container desktop">
-    <div class="column is-offset-2 is-9">
+    <div class="column is-offset-1-tablet is-offset-2-desktop is-9">
       <h1>
         Our Guides
       </h1>
     </div>
-
+    
     <!-- Guides -->
-    <div class="guide columns column is-offset-2 is-multiline is-mobile" *ngFor="let guide of guides">
+      <div class="column is-offset-1-tablet is-offset-2-desktop">
+      <div class="guide columns is-multiline is-mobile is-centered" *ngFor="let guide of guides">
 
-      <div class="column center is-full-mobile is-centered is-4-tablet">
-        <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400"></cdn-image>
-      </div>
+        <div class="column center is-full-mobile is-centered is-5-tablet">
+          <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400"></cdn-image>
+        </div>
 
-      <div class="column is-11-mobile">
-        <h2 class="bifocals">{{guide.name}}</h2>
-        <p class="nunito">{{guide.description}}</p>
-        <div class="btn">
-          <app-button href="{{guide.file.url}}" label="download .pdf">
-          </app-button>
+        <div class="column is-11-mobile is-5-tablet">
+          <h2 class="bifocals">{{guide.name}}</h2>
+          <p class="nunito">{{guide.description}}</p>
+          <div class="btn">
+            <app-button href="{{guide.file.url}}" label="download .pdf">
+            </app-button>
+          </div>
         </div>
       </div>
     </div>
-    <footer class="column is-offset-1">
+
+    <footer class="column is-offset-2">
       Make FOIA Work<br />
       <span id="email">engagementlab@emerson.edu</span><br />
       120 Boylston St. Boston, MA 02116

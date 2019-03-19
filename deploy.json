@@ -33,7 +33,7 @@
 
     "production" : {
       "user": "node",
-      "host": "209.97.145.13",
+      "host": "104.236.109.221",
       "repo": "git@github.com:engagementlab/make-foia-work.git",
       "ref": "origin/production",
       "path": "/srv/make-foia-work",

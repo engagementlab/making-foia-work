@@ -25,7 +25,7 @@
       "repo": "git@github.com:engagementlab/make-foia-work.git",
       "ref": "origin/master",
       "path": "/srv/make-foia-work",
-      "post-deploy" : "cd website; bash deploy.sh qa",
+      "post-deploy" : "bash deploy.sh qa",
       "env": {
         "NODE_ENV": "staging"
       }
@@ -38,7 +38,7 @@
       "ref": "origin/production",
       "path": "/srv/make-foia-work",
       "pre-deploy-local" : "echo 'Cloning and building.';",
-      "post-deploy" : "cd website; bash deploy.sh prod",
+      "post-deploy" : "bash deploy.sh prod",
       "env": {
         "NODE_ENV": "production"
       }

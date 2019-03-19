@@ -62,8 +62,15 @@ body {
   }
 }
 
+.show-mobile {
+  @include mq($from: tabletPortrait) {
+    display: none;
+  }
+}
+
+
 .hidden-not-desktop {
-  @include mq($until: tablet) {
+  @include mq($until: desktop) {
     display: none;
   }
 }

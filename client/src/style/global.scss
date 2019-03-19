@@ -8,29 +8,60 @@ $tablet: 768px;
 
 body {
 
-    margin: 0;
-    font-size: 24px;
+  margin: 0;
+  font-size: 24px;
 
-    @include mobile-only {
-        font-size: 18px;
-    }
+  @include mobile-only {
+    font-size: 18px;
+  }
 }
 
 // Font classes
 .pro-font {
-    font-family: 'ProFont';
+  font-family: 'ProFont';
 }
+
 .bifocals {
-    font-family: 'Bifocals';
+  font-family: 'Bifocals';
 }
+
 .nunito {
-    font-family: 'Nunito';
+  font-family: 'Nunito';
+}
+
+.strong {
+  strong {
+    font-family: 'Bifocals';
+  }
+}
+
+.p {
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.video {
+  h3 {
+    font-size: 1.5em;
+    text-transform: uppercase; 
+
+    margin-top: 14%;
+    margin-bottom: 14%;
+  }
 }
 
 // Bulma container adjustments
 .container {
-    @include not-desktop {
-        // margin-left: 3%;
-        // margin-right: 3%;
-    }
+  @include not-desktop {
+    // margin-left: 3%;
+    // margin-right: 3%;
+  }
+}
+
+.hidden-not-desktop {
+  @include mq($until: tablet) {
+    display: none;
+  }
 }

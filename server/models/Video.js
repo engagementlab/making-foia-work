@@ -34,7 +34,8 @@ Video.add({
 	
 	name: { type: String, default: "Video Name", required: true, initial: true },
 	description: { type: Types.Textarea, required: true, initial: true},
-	url: { type: Types.Url, label: "URL to Video on Vimeo", required: true, initial: true}
+	// url: { type: Types.Url, label: "URL to Video on Vimeo", required: true, initial: true}
+	videoId: { type: String, label: "ID of video on Vimeo", note: "This is in URL of video", required: true, initial: true}
 });
 
 /**

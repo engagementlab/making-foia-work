@@ -108,6 +108,17 @@ h1 {
     h2 {
       @include pxtoem(56, 48);
       text-transform: uppercase;
+
+      margin-top: 20%;
+      margin-bottom: 20%;
+    }
+
+    #about-description {
+    }
+
+    #yinyang {
+      position: absolute;
+      right: 15%;
     }
   }
 

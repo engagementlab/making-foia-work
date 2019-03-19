@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DataService } from './utils/data.service';
 
 import * as ismobile from 'ismobilejs';
 import * as _ from 'underscore';
 import * as embed from 'embed-video';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AppComponent implements OnInit {
   
@@ -20,7 +22,8 @@ export class AppComponent implements OnInit {
   
   title = 'Make FOIA Work';
 
-  constructor(private _dataSvc: DataService) {
+  constructor(private _dataSvc: DataService, private _sanitizer: DomSanitizer) {
+  
 
    if(ismobile.phone)
     this.linkWidth = 162;
@@ -35,10 +38,8 @@ export class AppComponent implements OnInit {
       this.articles = response.articles;
       this.guides = response.guides;
       
-      
       _.each(response.videos, (video: any) => {
-        video.frame = embed.vimeo(video.url);
-        console.log(video.frame)
+        video.frame = this._sanitizer.bypassSecurityTrustHtml(embed.vimeo(video.videoId));
       })
       this.videos = response.videos;
 

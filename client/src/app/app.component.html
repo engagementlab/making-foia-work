@@ -6,45 +6,47 @@
     <cdn-image id="logo-mobile-about" class="logo-mobile" cloudinaryId="img/logo-white" width="59" svg="true" alt="'Make FOIA Work' logo"
       class="hidden-not-mobile"></cdn-image>
     <p>
-      <cdn-image id="yinyang" cloudinaryId="img/yinyang" width="50" svg="true" alt="Yingyang image"></cdn-image>
+      <cdn-image id="yinyang" cloudinaryId="img/yinyang" width="50" phoneWidth="24" svg="true" alt="Yingyang image"></cdn-image>
     </p>
 
     <h1>About the project</h1>
 
-    <div class="description nunito" [innerHtml]="about?.description.html">
+    <div id="about-description" class="strong nunito" [innerHtml]="about?.description.html">
     </div>
 
     <p>
       <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" phoneWidth="134" svg="true" alt="Pegasus image"></cdn-image>
     </p>
     <h1>Who was involved</h1>
-    <div class="nunito" [innerHtml]="about?.who.html"></div>
+    <div class="nunito p" [innerHtml]="about?.who.html | linebreak"></div>
 
-    <h2 class="pro-font">Videos</h2>
+    <h2 class="pro-font center">Videos</h2>
 
     <div class="video" *ngFor="let video of videos">
-      <h3>{{video.name}}</h3>
-      <div [innerHtml]="video.frame">{{video.frame}}</div>
-      <p>{{video.description}}</p>
+
+      <div [innerHtml]="video.frame"></div>
+      <h3 class="bifocals">{{video.name}}</h3>
+      <p class="nunito">{{video.description}}</p>
+
     </div>
   </div>
 </section>
 
-<!-- <div id="about-btn" (click)="openCloseAbout();">i</div> -->
+<div id="about-btn" (click)="openCloseAbout();">i</div>
 <section id="content" class="container desktop">
 
   <cdn-image id="logo-mobile" class="logo-mobile" cloudinaryId="img/logo" width="59" svg="true" alt="'Make FOIA Work' logo"
     class="hidden-not-mobile"></cdn-image>
 
-  <div class="columns column is-full is-mobile is-multiline">
-    <div class="column is-2 hidden-mobile">
+  <div class="columns column is-full is-mobile is-multiline no-pad">
+    <div class="column is-2-tablet is-2-desktop hidden-mobile">
 
-      <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo" class="logo"></cdn-image>
-      <!-- <button class="about-btn">i</button> -->
+      <cdn-image cloudinaryId="img/logo" width="120" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-desktop"></cdn-image>
+      <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-not-desktop"></cdn-image>
 
     </div>
 
-    <div class="column is-9-tablet is-full-mobile center bg">
+    <div class="column is-8-tablet is-9-desktop is-full-mobile center bg">
 
       <cdn-image cloudinaryId="img/grafitti-bg"></cdn-image>
       <cdn-image id="smiley" cloudinaryId="img/smileyface" svg="true" phoneWidth="40"></cdn-image>
@@ -112,7 +114,7 @@
         <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400"></cdn-image>
       </div>
 
-      <div class="column is-full-mobile">
+      <div class="column is-11-mobile">
         <h2 class="bifocals">{{guide.name}}</h2>
         <p class="nunito">{{guide.description}}</p>
         <div class="btn">

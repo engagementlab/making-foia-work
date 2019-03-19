@@ -30,13 +30,13 @@
   </div>
 </section>
 
-<div id="about-btn" (click)="openCloseAbout();">i</div>
+<!-- <div id="about-btn" (click)="openCloseAbout();">i</div> -->
 <section id="content" class="container desktop">
 
   <cdn-image id="logo-mobile" class="logo-mobile" cloudinaryId="img/logo" width="59" svg="true" alt="'Make FOIA Work' logo"
     class="hidden-not-mobile"></cdn-image>
 
-  <div class="columns is-full is-mobile is-multiline">
+  <div class="columns column is-full is-mobile is-multiline">
     <div class="column is-2 hidden-mobile">
 
       <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo" class="logo"></cdn-image>
@@ -47,7 +47,7 @@
     <div class="column is-9-tablet is-full-mobile center bg">
 
       <cdn-image cloudinaryId="img/grafitti-bg"></cdn-image>
-
+      <cdn-image id="smiley" cloudinaryId="img/smileyface" svg="true" phoneWidth="40"></cdn-image>
 
     </div>
 
@@ -58,19 +58,20 @@
 
   </div>
 
-  <div class="columns column is-offset-2 is-9">
+  <div class="columns column is-mobile is-full-mobile is-offset-2-tablet is-9-tablet">
 
     <div id="center" class="column">
-      <!-- <cdn-image id="chain" cloudinaryId="img/chainlink" width="74" class="hidden-not-mobile"></cdn-image> -->
 
       <h1>
         Our Stories
       </h1>
 
       <!-- Articles -->
-      <div class="article columns is-multiline" *ngFor="let article of articles">
+      <div class="article columns is-multiline" *ngFor="let article of articles; let first = first;">
+        <cdn-image id="chain" cloudinaryId="img/chainlink" svg="true" phoneWidth="59" width="74" *ngIf="first"></cdn-image>
+        
         <cdn-image class="column is-full" cloudinaryPrefix="/" cloudinaryId="{{article.image.public_id}}" autoFormat="true"
-          height="480"></cdn-image>
+          height="480"></cdn-image>  
 
         <div class="bottom column columns">
           <div class="column is-half">

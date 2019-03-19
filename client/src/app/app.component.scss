@@ -14,7 +14,7 @@ h1 {
 
 }
 
-.logo-mobile {
+#logo-mobile {
   position: absolute;
   padding: 2%;
   padding-top: 5%;
@@ -25,14 +25,21 @@ h1 {
 }
 
 .description {
-  
+  @include pxtoem(24, 48);
+  background-color: white;
+  position: relative;
+  z-index: 2;
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: -25%;
+
   @include not-phones {
     width: 60%;
   }
 
-  strong {
-    font-family: 'Bifocals';
-    @include pxtoem(14, 18);
+  &#description-mobile {
+    margin-top: -23%;
+    margin-left: 6%;
   }
 }
 
@@ -61,6 +68,7 @@ h1 {
   @include phones {
     top: 0;
     right: 0;
+    padding-top: 3%;
   }
 
 }
@@ -126,6 +134,7 @@ h1 {
     }
   }
 }
+
 .bg {
   background-image: cdn-image('img/notebook', f_auto, c_scale, w_1280);
   background-size: cover;
@@ -137,8 +146,14 @@ h1 {
   }
 
   @include mobile-only {
-    padding: 2%;
     padding-top: 7%;
+    padding-bottom: 2%;
+  }
+
+  #smiley {
+    position: absolute;
+    top: 7%;
+    right: 10%;
   }
 
   #description {
@@ -177,12 +192,14 @@ h1 {
   }
 }
 
-#chain {
-  position: absolute;
-  z-index: -1;
-}
-
 .article {
+
+  #chain {
+    position: absolute;
+    right: 0;
+    z-index: -1;
+  }
+
   h2 {
     font-family: Bifocals-Black;
     text-transform: uppercase;

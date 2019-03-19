@@ -3,33 +3,42 @@
   <div id="close-btn" (click)="openCloseAbout();">x</div>
 
   <div id="content">
-    <cdn-image id="logo-mobile-about" class="logo-mobile" cloudinaryId="img/logo-white" width="59" svg="true" alt="'Make FOIA Work' logo"
-      class="hidden-not-mobile"></cdn-image>
+    <cdn-image id="logo-about" class="logo" cloudinaryId="img/logo-white" width="170" phoneWidth="59" svg="true" alt="'Make FOIA Work' logo"></cdn-image>
     <p>
       <cdn-image id="yinyang" cloudinaryId="img/yinyang" width="50" phoneWidth="24" svg="true" alt="Yingyang image"></cdn-image>
     </p>
 
-    <h1>About the project</h1>
+    <h1 class="column is-offset-1-tablet">About the project</h1>
 
-    <div id="about-description" class="strong nunito" [innerHtml]="about?.description.html">
+    <div id="about-description" class="strong nunito column is-offset-half-tablet" [innerHtml]="about?.description.html">
     </div>
 
-    <p>
+    <p class="column is-offset-1-tablet">
       <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" phoneWidth="134" svg="true" alt="Pegasus image"></cdn-image>
     </p>
-    <h1>Who was involved</h1>
-    <div class="nunito p" [innerHtml]="about?.who.html | linebreak"></div>
+
+    <h1 class="column is-offset-1-tablet">Who was involved</h1>
+    <div class="nunito p column is-offset-half-tablet" [innerHtml]="about?.who.html | linebreak"></div>
 
     <h2 class="pro-font center">Videos</h2>
 
-    <div class="video" *ngFor="let video of videos">
+    <div class="columns column is-offset-1-tablet is-full-mobile is-mobile is-multiline">
+      <div class="video column is-full-mobile is-half-tablet" *ngFor="let video of videos">
 
-      <div [innerHtml]="video.frame"></div>
-      <h3 class="bifocals">{{video.name}}</h3>
-      <p class="nunito">{{video.description}}</p>
+        <div [innerHtml]="video.frame"></div>
+        <h3 class="bifocals">{{video.name}}</h3>
+        <p class="nunito">{{video.description}}</p>
 
+      </div>
     </div>
+
+    <footer class="column is-offset-1-tablet no-pad">
+        Make FOIA Work<br />
+        <span id="email">engagementlab@emerson.edu</span><br />
+        120 Boylston St. Boston, MA 02116
+      </footer>
   </div>
+
 </section>
 
 <div id="about-btn" (click)="openCloseAbout();">i</div>

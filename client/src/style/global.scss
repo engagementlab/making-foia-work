@@ -31,12 +31,14 @@ body {
 
 .strong {
   strong {
+    font-size: 1.3em;
     font-family: 'Bifocals';
   }
 }
 
 .p {
   p {
+    @include pxtoem(12, 18);
     margin-top: 0;
     margin-bottom: 0;
   }

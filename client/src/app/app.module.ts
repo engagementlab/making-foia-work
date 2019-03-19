@@ -12,6 +12,7 @@ import { CdnImageComponent } from './utils/cdn-image/cdn-image.component';
 import { DataService } from './utils/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from './utils/app-button/button.component';
+import { LinebreakPipe } from './utils/linebreak.pipe';
 
 export const cloudinary = {
   Cloudinary: CloudinaryCore
@@ -22,7 +23,8 @@ export const config: CloudinaryConfiguration = cloudinaryConfiguration;
   declarations: [
     AppComponent,
     ButtonComponent,
-    CdnImageComponent
+    CdnImageComponent,
+    LinebreakPipe
   ],
   imports: [
     AppRoutingModule,

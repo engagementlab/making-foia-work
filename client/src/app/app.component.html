@@ -13,12 +13,18 @@
     <div id="about-description" class="strong nunito column is-offset-half-tablet" [innerHtml]="about?.description.html">
     </div>
 
-    <p class="column is-offset-1-tablet">
-      <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" phoneWidth="134" svg="true" alt="Pegasus image"></cdn-image>
+    <p class="column is-offset-1-tablet" *ngIf="isPhone">
+      <cdn-image id="pegasus" cloudinaryId="img/pegsus" phoneWidth="134" svg="true" alt="Pegasus image"></cdn-image>
     </p>
 
     <h1 class="column is-offset-1-tablet">Who was involved</h1>
-    <div class="nunito p column is-offset-half-tablet" [innerHtml]="about?.who.html | linebreak"></div>
+
+    <div class="columns no-margin">
+    <div class="column is-offset-1-tablet is-half-tablet" *ngIf="!isPhone">
+      <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309"svg="true" alt="Pegasus image"></cdn-image>
+    </div>
+    <div class="nunito p column is-5-tablet" [innerHtml]="about?.who.html | linebreak"></div>
+    </div>
 
     <h2 class="pro-font center">Videos</h2>
 

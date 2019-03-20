@@ -19,14 +19,17 @@ export class AppComponent implements OnInit {
   public guides: any[];
   public videos: any[];
   public linkWidth: number = 212;
+
+  public isPhone: boolean;
   
   title = 'Make FOIA Work';
 
   constructor(private _dataSvc: DataService, private _sanitizer: DomSanitizer) {
   
-
    if(ismobile.phone)
     this.linkWidth = 162;
+
+   this.isPhone = ismobile.phone;
 
   }
 

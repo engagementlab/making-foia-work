@@ -1,29 +1,65 @@
 <section id="about">
 
-  <cdn-image id="close-btn" cloudinaryId="img/close" width="50" svg="true" alt="Close 'about'" (click)="openCloseAbout();"></cdn-image>
+  <cdn-image id="close-btn" cloudinaryId="img/close" width="50" svg="true" alt="Close 'about'"
+    (click)="openCloseAbout();"></cdn-image>
 
   <div id="content">
-    <cdn-image id="logo-about" class="logo" cloudinaryId="img/logo-white" width="170" phoneWidth="59" svg="true" alt="'Make FOIA Work' logo"></cdn-image>
+    <cdn-image id="logo-about" class="logo" cloudinaryId="img/logo-white" width="170" phoneWidth="59" svg="true"
+      alt="'Make FOIA Work' logo"></cdn-image>
     <p>
-      <cdn-image id="yinyang" cloudinaryId="img/yinyang" width="50" phoneWidth="24" svg="true" alt="Yingyang image"></cdn-image>
+      <cdn-image id="yinyang" cloudinaryId="img/yinyang" width="50" phoneWidth="24" svg="true" alt="Yingyang image">
+      </cdn-image>
     </p>
 
-    <h1 class="column is-offset-1-tablet">About the project</h1>
+    <div class="columns is-multiline">
+    <div class="column is-offset-1-tablet is-11-tablet"><h1>About the project</h1></div>
+    <div class="column is-offset-1-tablet is-5-tablet" *ngIf="!isPhone">
+        <p><cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" svg="true" alt="Pegasus image"></cdn-image>
+      </div>
 
-    <div id="about-description" class="strong nunito column is-offset-half-tablet" [innerHtml]="about?.description.html">
+    <div id="about-description" class="strong nunito column is-5"
+      [innerHtml]="about?.description.html">
     </div>
+  </div>
 
     <p class="column is-offset-1-tablet" *ngIf="isPhone">
       <cdn-image id="pegasus" cloudinaryId="img/pegsus" phoneWidth="134" svg="true" alt="Pegasus image"></cdn-image>
     </p>
 
-    <h1 class="column is-offset-1-tablet">Who was involved</h1>
+    <div class="column is-offset-1-tablet is-11-tablet"><h1>Who was involved</h1></div>
+    <!-- <div class="column is-offset-1-tablet is-5-tablet">
+        <p><cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" svg="true" alt="Pegasus image"></cdn-image>
+      </div> -->
 
     <div class="columns no-margin">
-    <div class="column is-offset-1-tablet is-half-tablet" *ngIf="!isPhone">
-      <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309"svg="true" alt="Pegasus image"></cdn-image>
+      <div class="column is-offset-1-tablet is-half-tablet" *ngIf="!isPhone">
+          <cdn-image cloudinaryId="img/partner-logos-05" width="300" svg="true" alt="Muckrock logo"></cdn-image>
+          <br />
+          <br />
+          <cdn-image cloudinaryId="img/partner-logos-02" width="300" svg="true"
+            alt="Boston Institute for Non-Profit Journalism logo"></cdn-image>
+          <br />
+          <br />
+          <cdn-image cloudinaryId="img/partner-logos-04" width="300" svg="true" alt="Online News Association logo">
+          </cdn-image>
+          <br />
+          <br />
+          <cdn-image cloudinaryId="img/partner-logos-03" width="300" svg="true" alt="Emerson College logo"></cdn-image>
+      </div>
+      <div class="nunito p column is-5-tablet" [innerHtml]="about?.who.html | linebreak"></div>
     </div>
-    <div class="nunito p column is-5-tablet" [innerHtml]="about?.who.html | linebreak"></div>
+
+    <div class="column columns is-mobile is-full no-margin no-pad" *ngIf="isPhone">
+      <div class="column no-pad">
+        <cdn-image cloudinaryId="img/partner-logos-02" width="150" svg="true"
+          alt="Boston Institute for Non-Profit Journalism logo"></cdn-image>
+      </div>
+      <div class="column no-pad">
+        <cdn-image cloudinaryId="img/partner-logos-05" width="150" svg="true" alt="Muckrock logo"></cdn-image>
+        <cdn-image cloudinaryId="img/partner-logos-04" width="150" svg="true" alt="Online News Association logo">
+        </cdn-image>
+        <cdn-image cloudinaryId="img/partner-logos-03" width="150" svg="true" alt="Emerson College logo"></cdn-image>
+      </div>
     </div>
 
     <h2 class="pro-font center">Videos</h2>
@@ -39,10 +75,10 @@
     </div>
 
     <footer class="column is-offset-1-tablet no-pad">
-        Make FOIA Work<br />
-        <span id="email">engagementlab@emerson.edu</span><br />
-        120 Boylston St. Boston, MA 02116
-      </footer>
+      Make FOIA Work<br />
+      <span id="email">engagementlab@emerson.edu</span><br />
+      120 Boylston St. Boston, MA 02116
+    </footer>
   </div>
 
 </section>
@@ -50,14 +86,16 @@
 <div id="about-btn" (click)="openCloseAbout();">i</div>
 <section id="content" class="container desktop">
 
-  <cdn-image id="logo-mobile" class="logo-mobile" cloudinaryId="img/logo" width="59" svg="true" alt="'Make FOIA Work' logo"
-    class="show-mobile"></cdn-image>
+  <cdn-image id="logo-mobile" class="logo-mobile" cloudinaryId="img/logo" width="59" svg="true"
+    alt="'Make FOIA Work' logo" class="show-mobile"></cdn-image>
 
   <div class="columns column is-full is-mobile is-multiline no-pad">
     <div class="column is-2-tablet is-2-desktop hidden-mobile">
 
-      <cdn-image cloudinaryId="img/logo" width="120" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-desktop"></cdn-image>
-      <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-not-desktop"></cdn-image>
+      <cdn-image cloudinaryId="img/logo" width="120" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-desktop">
+      </cdn-image>
+      <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo"
+        class="logo hidden-not-desktop"></cdn-image>
 
     </div>
 
@@ -68,8 +106,8 @@
       <cdn-image id="smiley" cloudinaryId="img/smileyface" svg="true" width="98" phoneWidth="40"></cdn-image>
 
       <div id="description" class="description column is-full-tablet is-half-desktop pro-font hidden-mobile">
-      {{about?.intro}}
-        </div>
+        {{about?.intro}}
+      </div>
     </div>
 
     <!-- Mobile -->
@@ -89,10 +127,11 @@
 
       <!-- Articles -->
       <div class="article columns is-multiline" *ngFor="let article of articles; let first = first;">
-        <cdn-image id="chain" cloudinaryId="img/chainlink" svg="true" phoneWidth="59" width="166" *ngIf="first"></cdn-image>
+        <cdn-image id="chain" cloudinaryId="img/chainlink" svg="true" phoneWidth="59" width="166" *ngIf="first">
+        </cdn-image>
 
-        <cdn-image class="column is-full" cloudinaryPrefix="/" cloudinaryId="{{article.image.public_id}}" autoFormat="true"
-          height="480"></cdn-image>
+        <cdn-image class="column is-full" cloudinaryPrefix="/" cloudinaryId="{{article.image.public_id}}"
+          autoFormat="true" height="480"></cdn-image>
 
         <div class="bottom column columns">
           <div class="column is-half">
@@ -125,13 +164,14 @@
         Our Guides
       </h1>
     </div>
-    
+
     <!-- Guides -->
-      <div class="column is-offset-1-tablet is-offset-2-desktop">
+    <div class="column is-offset-1-tablet is-offset-2-desktop">
       <div class="guide columns is-multiline is-mobile is-centered" *ngFor="let guide of guides">
 
         <div class="column center is-full-mobile is-centered is-5-tablet">
-          <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400"></cdn-image>
+          <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400">
+          </cdn-image>
         </div>
 
         <div class="column is-11-mobile is-5-tablet">

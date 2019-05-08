@@ -16,7 +16,7 @@ mongoose.Promise = require('bluebird');
 
 var buildData = (res) => {
 
-let aboutFields = 'intro description.html who.html -_id';
+let aboutFields = 'intro introPara description.html who.html -_id';
 let articleFields = 'name description image.public_id url -_id';
 let guideFields = 'name description image.public_id file.url -_id';
 let videoFields = 'name description videoId -_id';

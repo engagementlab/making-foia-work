@@ -12,39 +12,40 @@
     </p>
 
     <div class="columns is-multiline">
-    <div class="column is-offset-1-tablet is-11-tablet"><h1>About the project</h1></div>
-    <div class="column is-offset-1-tablet is-5-tablet" *ngIf="!isPhone">
-        <p><cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" svg="true" alt="Pegasus image"></cdn-image>
+      <div class="column is-offset-1-tablet is-11-tablet">
+        <h1>About the project</h1>
+      </div>
+      <div class="column is-offset-1-tablet is-5-tablet" *ngIf="!isPhone">
+        <p>
+          <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" svg="true" alt="Pegasus image"></cdn-image>
       </div>
 
-    <div id="about-description" class="strong nunito column is-5"
-      [innerHtml]="about?.description.html">
+      <div id="about-description" class="strong nunito column is-5" [innerHtml]="about?.description.html">
+      </div>
     </div>
-  </div>
 
     <p class="column is-offset-1-tablet" *ngIf="isPhone">
       <cdn-image id="pegasus" cloudinaryId="img/pegsus" phoneWidth="134" svg="true" alt="Pegasus image"></cdn-image>
     </p>
 
-    <div class="column is-offset-1-tablet is-11-tablet"><h1>Who was involved</h1></div>
-    <!-- <div class="column is-offset-1-tablet is-5-tablet">
-        <p><cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" svg="true" alt="Pegasus image"></cdn-image>
-      </div> -->
+    <div class="column is-offset-1-tablet is-11-tablet">
+      <h1>Who was involved</h1>
+    </div>
 
     <div class="columns no-margin">
       <div class="column is-offset-1-tablet is-half-tablet" *ngIf="!isPhone">
-          <cdn-image cloudinaryId="img/partner-logos-05" width="300" svg="true" alt="Muckrock logo"></cdn-image>
-          <br />
-          <br />
-          <cdn-image cloudinaryId="img/partner-logos-02" width="300" svg="true"
-            alt="Boston Institute for Non-Profit Journalism logo"></cdn-image>
-          <br />
-          <br />
-          <cdn-image cloudinaryId="img/partner-logos-04" width="300" svg="true" alt="Online News Association logo">
-          </cdn-image>
-          <br />
-          <br />
-          <cdn-image cloudinaryId="img/partner-logos-03" width="300" svg="true" alt="Emerson College logo"></cdn-image>
+        <cdn-image cloudinaryId="img/partner-logos-05" width="300" svg="true" alt="Muckrock logo"></cdn-image>
+        <br />
+        <br />
+        <cdn-image cloudinaryId="img/partner-logos-02" width="300" svg="true"
+          alt="Boston Institute for Non-Profit Journalism logo"></cdn-image>
+        <br />
+        <br />
+        <cdn-image cloudinaryId="img/partner-logos-04" width="300" svg="true" alt="Online News Association logo">
+        </cdn-image>
+        <br />
+        <br />
+        <cdn-image cloudinaryId="img/partner-logos-03" width="300" svg="true" alt="Emerson College logo"></cdn-image>
       </div>
       <div class="nunito p column is-5-tablet" [innerHtml]="about?.who.html | linebreak"></div>
     </div>
@@ -100,10 +101,7 @@
     </div>
 
     <div class="column is-8-tablet is-9-desktop is-full-mobile center bg">
-
-      <cdn-image id="scribble" cloudinaryId="img/scribble" svg="true" width="82" class="hidden-mobile"></cdn-image>
-      <cdn-image cloudinaryId="img/grafitti-bg"></cdn-image>
-      <cdn-image id="smiley" cloudinaryId="img/smileyface" svg="true" width="98" phoneWidth="40"></cdn-image>
+      <cdn-image cloudinaryId="img/upper-bg" width="800" autoFormat="true"></cdn-image>
 
       <div id="description" class="description column is-full-tablet is-half-desktop pro-font hidden-mobile">
         {{about?.intro}}
@@ -117,9 +115,13 @@
 
   </div>
 
-  <div class="columns column is-mobile is-full-mobile is-offset-1-tablet is-offset-2-desktop is-9-tablet">
+  <div class="columns column is-multiline is-mobile is-full-mobile is-offset-1-tablet is-offset-2-desktop is-9-tablet">
 
-    <div id="center" class="column">
+    <div id="intro-para" class="pro-font column is-mobile is-full-mobile is-offset-1-tablet is-9-tablet">
+      {{about?.introPara}}
+    </div>
+
+    <div id="center" class="column is-10">
 
       <h1>
         Our Stories

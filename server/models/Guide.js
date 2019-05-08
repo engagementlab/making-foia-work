@@ -50,9 +50,10 @@ var azureFile = new keystone.Storage({
 Guide.add({
 	
 	name: { type: String, default: "Guide Name", required: true, initial: true },
-	description: { type: Types.Textarea, required: true, initial: true},
+  description: { type: Types.Textarea, required: true, initial: true},
+  isSyllabus: { type: Boolean },
 	image: { type: Types.CloudinaryImage, folder: 'make-foia-work/guides' },
-    file: { type: Types.File, storage: azureFile }
+  file: { type: Types.File, storage: azureFile }
 });
 
 /**

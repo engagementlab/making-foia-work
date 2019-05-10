@@ -146,6 +146,13 @@
                 <path stroke="#000" d="M192.735 10.531L210.127.501H0" />
               </svg>
             </a>
+            <a href="{{article.dataUrl}}" class="pro-font" *ngIf="article.dataUrl">
+              view the data
+              <br />
+              <svg [attr.width]="linkWidth" height="11" fill="none" viewBox="0 0 212 11">
+                <path stroke="#000" d="M192.735 10.531L210.127.501H0" />
+              </svg>
+            </a>
           </div>
 
           <div class="column">
@@ -163,20 +170,20 @@
   <div class="container desktop">
     <div class="column is-offset-1-tablet is-offset-2-desktop is-9">
       <h1>
-        Our Guides
+        Our Guide
       </h1>
     </div>
 
     <!-- Guides -->
     <div class="column is-offset-1-tablet is-offset-2-desktop">
-      <div class="guide columns is-multiline is-mobile is-centered" *ngFor="let guide of guides">
+      <div class="guide columns is-multiline is-mobile" *ngFor="let guide of guides">
 
-        <div class="column center is-full-mobile is-centered is-5-tablet">
+        <div class="column center is-full-mobile is-5-tablet">
           <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400">
           </cdn-image>
         </div>
 
-        <div class="column is-11-mobile is-5-tablet">
+        <div class="column is-11-mobile is-4-tablet is-offset-1-tablet">
           <h2 class="bifocals">{{guide.name}}</h2>
           <p class="nunito">{{guide.description}}</p>
           <div class="btn">
@@ -186,7 +193,32 @@
         </div>
       </div>
     </div>
+    <div class="column is-offset-1-tablet is-offset-2-desktop is-9">
+      <h1>
+        Our Syllabi
+      </h1>
+    </div>
 
+<!-- Syllabi -->
+<div class="column is-offset-1-tablet is-offset-2-desktop">
+  <div class="guide columns is-multiline is-mobile" *ngFor="let syllabus of syllabi">
+
+    <div class="column is-11-mobile is-5-tablet">
+      <h2 class="bifocals">{{syllabus.name}}<br /><span class="bifocals-bl">PARTICIPATORY DESIGN SYLLABUS</span></h2>
+      <p class="nunito">{{syllabus.description}}</p>
+      <div class="btn">
+        <app-button href="{{syllabus.file.url}}" label="download .pdf">
+        </app-button>
+      </div>
+    </div>
+
+    <div class="column center is-full-mobile is-4-tablet is-offset-1-tablet">
+      <cdn-image cloudinaryPrefix="/" cloudinaryId="{{syllabus.image.public_id}}" autoFormat="true" width="400">
+      </cdn-image>
+    </div>
+
+  </div>
+</div>
     <footer class="column is-offset-2">
       Make FOIA Work<br />
       <span id="email">engagementlab@emerson.edu</span><br />

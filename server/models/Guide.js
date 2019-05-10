@@ -22,8 +22,8 @@ var Types = keystone.Field.Types;
  */
 var Guide = new keystone.List('Guide', 
 	{
-		label: 'Guides',
-		singular: 'Guide'
+		label: 'Guides/Syllabi',
+		singular: 'Guides'
 	});
 
 // Storage adapter for Azure

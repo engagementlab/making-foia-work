@@ -6,6 +6,10 @@ import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();
+
+  // GA tracking
+  document.write('<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64617433-12"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag(\'js\', new Date()); gtag(\'config\', \'UA-64617433-12\'); </script>');
+
 }
 
 platformBrowserDynamic().bootstrapModule(AppModule)

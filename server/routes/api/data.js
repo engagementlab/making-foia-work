@@ -17,8 +17,8 @@ mongoose.Promise = require('bluebird');
 var buildData = (res) => {
 
 let aboutFields = 'intro introPara description.html who.html -_id';
-let articleFields = 'name description image.public_id url -_id';
-let guideFields = 'name description image.public_id file.url -_id';
+let articleFields = 'name description image.public_id url dataUrl -_id';
+let guideFields = 'name description image.public_id file.url isSyllabus -_id';
 let videoFields = 'name description videoId -_id';
 
 let about = keystone.list('About').model;

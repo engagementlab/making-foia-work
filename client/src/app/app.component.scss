@@ -6,10 +6,23 @@ h1 {
   @include pxtoem(24, 36);
 }
 
+#top {
+  @include phones  {
+  margin-top: -10%;
+  }
+}
+
 .logo {
 
   @include ngImg {
     margin-top: 40px;
+  }
+
+  ::ng-deep img {
+  @include phones  {
+    width: 59px!important;
+    max-width: 59px!important;
+   }
   }
 
 }
@@ -104,7 +117,6 @@ h1 {
 
   #about-description {
     @include pxtoem(12, 18);
-
   }
 
   &.open {

@@ -34,18 +34,14 @@
 
     <div class="columns no-margin">
       <div class="column is-offset-1-tablet is-half-tablet" *ngIf="!isPhone">
+        <cdn-image cloudinaryId="img/partner-logos-03" width="300" svg="true" alt="Emerson College logo"></cdn-image>
+        <br />
+        <br />
         <cdn-image cloudinaryId="img/partner-logos-05" width="300" svg="true" alt="Muckrock logo"></cdn-image>
         <br />
         <br />
         <cdn-image cloudinaryId="img/partner-logos-02" width="300" svg="true"
           alt="Boston Institute for Non-Profit Journalism logo"></cdn-image>
-        <br />
-        <br />
-        <cdn-image cloudinaryId="img/partner-logos-04" width="300" svg="true" alt="Online News Association logo">
-        </cdn-image>
-        <br />
-        <br />
-        <cdn-image cloudinaryId="img/partner-logos-03" width="300" svg="true" alt="Emerson College logo"></cdn-image>
       </div>
       <div class="nunito p column is-5-tablet" [innerHtml]="about?.who.html | linebreak"></div>
     </div>
@@ -63,16 +59,9 @@
       </div>
     </div>
 
-    <h2 class="pro-font center">Videos</h2>
 
-    <div class="columns column is-offset-1-tablet is-full-mobile is-mobile is-multiline">
-      <div class="video column is-full-mobile is-half-tablet" *ngFor="let video of videos">
-
-        <div [innerHtml]="video.frame"></div>
-        <h3 class="bifocals">{{video.name}}</h3>
-        <p class="nunito">{{video.description}}</p>
-
-      </div>
+    <div class="nunito column is-offset-1-tablet is-10">
+        Support for this project was made possible by the Online News Association’s Challenge Fund for Innovation in Journalism Education. This project is administered by the Online News Association with support from Excellence and Ethics in Journalism Foundation, the Robert R. McCormick Foundation, Knight Foundation, the Democracy Fund, Rita Allen Foundation and the Scripps Howard Foundation.
     </div>
 
     <footer class="column is-offset-1-tablet no-pad">
@@ -86,17 +75,11 @@
 
 <div id="about-btn" (click)="openCloseAbout();">i</div>
 <section id="content" class="container desktop">
-
-  <cdn-image id="logo-mobile" class="logo-mobile" cloudinaryId="img/logo" width="59" svg="true"
-    alt="'Make FOIA Work' logo" class="show-mobile"></cdn-image>
-
   <div class="columns column is-full is-mobile is-multiline no-pad">
-    <div class="column is-2-tablet is-2-desktop hidden-mobile">
+    <div id="top" class="column is-2-tablet is-2-desktop">
 
-      <cdn-image cloudinaryId="img/logo" width="120" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-desktop">
-      </cdn-image>
       <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo"
-        class="logo hidden-not-desktop"></cdn-image>
+        class="logo"></cdn-image>
 
     </div>
 
@@ -139,14 +122,14 @@
           <div class="column is-half">
             <h2>{{article.name}}</h2>
             <p class="bifocals hidden-not-mobile">{{article.description}}</p>
-            <a href="{{article.url}}" class="pro-font">
+            <a href="{{article.url}}" target="_blank" class="pro-font">
               read this article
               <br />
               <svg [attr.width]="linkWidth" height="11" fill="none" viewBox="0 0 212 11">
                 <path stroke="#000" d="M192.735 10.531L210.127.501H0" />
               </svg>
             </a>
-            <a href="{{article.dataUrl}}" class="pro-font" *ngIf="article.dataUrl">
+            <a href="{{article.dataUrl}}" target="_blank" class="pro-font" *ngIf="article.dataUrl">
               view the data
               <br />
               <svg [attr.width]="linkWidth" height="11" fill="none" viewBox="0 0 212 11">
@@ -187,7 +170,7 @@
           <h2 class="bifocals">{{guide.name}}</h2>
           <p class="nunito">{{guide.description}}</p>
           <div class="btn">
-            <app-button href="{{guide.file.url}}" label="download .pdf">
+            <app-button href="{{guide.file.url}}" [newWindow]="true" label="download .pdf">
             </app-button>
           </div>
         </div>
@@ -204,7 +187,7 @@
   <div class="guide columns is-multiline is-mobile" *ngFor="let syllabus of syllabi">
 
     <div class="column is-11-mobile is-5-tablet">
-      <h2 class="bifocals">{{syllabus.name}}<br /><span class="bifocals-bl">PARTICIPATORY DESIGN SYLLABUS</span></h2>
+      <h2 class="bifocals">{{syllabus.name}}</h2>
       <p class="nunito">{{syllabus.description}}</p>
       <div class="btn">
         <app-button href="{{syllabus.file.url}}" label="download .pdf">

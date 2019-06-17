@@ -3,7 +3,6 @@ import { DataService } from './utils/data.service';
 
 import * as ismobile from 'ismobilejs';
 import * as _ from 'underscore';
-import * as embed from 'embed-video';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -43,12 +42,6 @@ export class AppComponent implements OnInit {
       this.guides = _.where(response.guides, {isSyllabus: false});
       this.syllabi = _.where(response.guides, {isSyllabus: true});
       
-      _.each(response.videos, (video: any) => {
-        video.frame = this._sanitizer.bypassSecurityTrustHtml(embed.vimeo(video.videoId));
-      })
-      this.videos = response.videos;
-
-
     });
 
   }

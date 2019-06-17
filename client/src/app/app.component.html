@@ -1,75 +1,94 @@
 <section id="about">
 
-  <div id="close-btn" (click)="openCloseAbout();">x</div>
+  <cdn-image id="close-btn" cloudinaryId="img/close" width="50" svg="true" alt="Close 'about'"
+    (click)="openCloseAbout();"></cdn-image>
 
   <div id="content">
-    <cdn-image id="logo-about" class="logo" cloudinaryId="img/logo-white" width="170" phoneWidth="59" svg="true" alt="'Make FOIA Work' logo"></cdn-image>
+    <cdn-image id="logo-about" class="logo" cloudinaryId="img/logo-white" width="170" phoneWidth="59" svg="true"
+      alt="'Make FOIA Work' logo"></cdn-image>
     <p>
-      <cdn-image id="yinyang" cloudinaryId="img/yinyang" width="50" phoneWidth="24" svg="true" alt="Yingyang image"></cdn-image>
+      <cdn-image id="yinyang" cloudinaryId="img/yinyang" width="50" phoneWidth="24" svg="true" alt="Yingyang image">
+      </cdn-image>
     </p>
 
-    <h1 class="column is-offset-1-tablet">About the project</h1>
+    <div class="columns is-multiline">
+      <div class="column is-offset-1-tablet is-11-tablet">
+        <h1>About the project</h1>
+      </div>
+      <div class="column is-offset-1-tablet is-5-tablet" *ngIf="!isPhone">
+        <p>
+          <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309" svg="true" alt="Pegasus image"></cdn-image>
+      </div>
 
-    <div id="about-description" class="strong nunito column is-offset-half-tablet" [innerHtml]="about?.description.html">
+      <div id="about-description" class="strong nunito column is-5" [innerHtml]="about?.description.html">
+      </div>
     </div>
 
     <p class="column is-offset-1-tablet" *ngIf="isPhone">
       <cdn-image id="pegasus" cloudinaryId="img/pegsus" phoneWidth="134" svg="true" alt="Pegasus image"></cdn-image>
     </p>
 
-    <h1 class="column is-offset-1-tablet">Who was involved</h1>
+    <div class="column is-offset-1-tablet is-11-tablet">
+      <h1>Who was involved</h1>
+    </div>
 
     <div class="columns no-margin">
-    <div class="column is-offset-1-tablet is-half-tablet" *ngIf="!isPhone">
-      <cdn-image id="pegasus" cloudinaryId="img/pegsus" width="309"svg="true" alt="Pegasus image"></cdn-image>
+      <div class="column is-offset-1-tablet is-half-tablet" *ngIf="!isPhone">
+        <cdn-image cloudinaryId="img/partner-logos-03" width="300" svg="true" alt="Emerson College logo"></cdn-image>
+        <br />
+        <br />
+        <cdn-image cloudinaryId="img/partner-logos-05" width="300" svg="true" alt="Muckrock logo"></cdn-image>
+        <br />
+        <br />
+        <cdn-image cloudinaryId="img/partner-logos-02" width="300" svg="true"
+          alt="Boston Institute for Non-Profit Journalism logo"></cdn-image>
+      </div>
+      <div class="nunito p column is-5-tablet" [innerHtml]="about?.who.html | linebreak"></div>
     </div>
-    <div class="nunito p column is-5-tablet" [innerHtml]="about?.who.html | linebreak"></div>
-    </div>
 
-    <h2 class="pro-font center">Videos</h2>
-
-    <div class="columns column is-offset-1-tablet is-full-mobile is-mobile is-multiline">
-      <div class="video column is-full-mobile is-half-tablet" *ngFor="let video of videos">
-
-        <div [innerHtml]="video.frame"></div>
-        <h3 class="bifocals">{{video.name}}</h3>
-        <p class="nunito">{{video.description}}</p>
-
+    <div class="column columns is-mobile is-full no-margin no-pad" *ngIf="isPhone">
+      <div class="column no-pad">
+        <cdn-image cloudinaryId="img/partner-logos-02" width="150" svg="true"
+          alt="Boston Institute for Non-Profit Journalism logo"></cdn-image>
+      </div>
+      <div class="column no-pad">
+        <cdn-image cloudinaryId="img/partner-logos-05" width="150" svg="true" alt="Muckrock logo"></cdn-image>
+        <cdn-image cloudinaryId="img/partner-logos-04" width="150" svg="true" alt="Online News Association logo">
+        </cdn-image>
+        <cdn-image cloudinaryId="img/partner-logos-03" width="150" svg="true" alt="Emerson College logo"></cdn-image>
       </div>
     </div>
 
+
+    <div class="nunito column is-offset-1-tablet is-10">
+        Support for this project was made possible by the Online News Association’s Challenge Fund for Innovation in Journalism Education. This project is administered by the Online News Association with support from Excellence and Ethics in Journalism Foundation, the Robert R. McCormick Foundation, Knight Foundation, the Democracy Fund, Rita Allen Foundation and the Scripps Howard Foundation.
+    </div>
+
     <footer class="column is-offset-1-tablet no-pad">
-        Make FOIA Work<br />
-        <span id="email">engagementlab@emerson.edu</span><br />
-        120 Boylston St. Boston, MA 02116
-      </footer>
+      Make FOIA Work<br />
+      <span id="email">paul_mihailidis@emerson.edu</span><br />
+      120 Boylston St. Boston, MA 02116
+    </footer>
   </div>
 
 </section>
 
 <div id="about-btn" (click)="openCloseAbout();">i</div>
 <section id="content" class="container desktop">
-
-  <cdn-image id="logo-mobile" class="logo-mobile" cloudinaryId="img/logo" width="59" svg="true" alt="'Make FOIA Work' logo"
-    class="show-mobile"></cdn-image>
-
   <div class="columns column is-full is-mobile is-multiline no-pad">
-    <div class="column is-2-tablet is-2-desktop hidden-mobile">
+    <div id="top" class="column is-2-tablet is-2-desktop">
 
-      <cdn-image cloudinaryId="img/logo" width="120" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-desktop"></cdn-image>
-      <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo" class="logo hidden-not-desktop"></cdn-image>
+      <cdn-image cloudinaryId="img/logo" width="170" svg="true" alt="'Make FOIA Work' logo"
+        class="logo"></cdn-image>
 
     </div>
 
     <div class="column is-8-tablet is-9-desktop is-full-mobile center bg">
-
-      <cdn-image id="scribble" cloudinaryId="img/scribble" svg="true" width="82" class="hidden-mobile"></cdn-image>
-      <cdn-image cloudinaryId="img/grafitti-bg"></cdn-image>
-      <cdn-image id="smiley" cloudinaryId="img/smileyface" svg="true" width="98" phoneWidth="40"></cdn-image>
+      <cdn-image cloudinaryId="img/upper-bg" width="800" autoFormat="true"></cdn-image>
 
       <div id="description" class="description column is-full-tablet is-half-desktop pro-font hidden-mobile">
-      {{about?.intro}}
-        </div>
+        {{about?.intro}}
+      </div>
     </div>
 
     <!-- Mobile -->
@@ -79,9 +98,13 @@
 
   </div>
 
-  <div class="columns column is-mobile is-full-mobile is-offset-1-tablet is-offset-2-desktop is-9-tablet">
+  <div class="columns column is-multiline is-mobile is-full-mobile is-offset-1-tablet is-offset-2-desktop is-9-tablet">
 
-    <div id="center" class="column">
+    <div id="intro-para" class="pro-font column is-mobile is-full-mobile is-offset-1-tablet is-9-tablet">
+      {{about?.introPara}}
+    </div>
+
+    <div id="center" class="column is-10">
 
       <h1>
         Our Stories
@@ -89,17 +112,25 @@
 
       <!-- Articles -->
       <div class="article columns is-multiline" *ngFor="let article of articles; let first = first;">
-        <cdn-image id="chain" cloudinaryId="img/chainlink" svg="true" phoneWidth="59" width="166" *ngIf="first"></cdn-image>
+        <cdn-image id="chain" cloudinaryId="img/chainlink" svg="true" phoneWidth="59" width="166" *ngIf="first">
+        </cdn-image>
 
-        <cdn-image class="column is-full" cloudinaryPrefix="/" cloudinaryId="{{article.image.public_id}}" autoFormat="true"
-          height="480"></cdn-image>
+        <cdn-image class="column is-full" cloudinaryPrefix="/" cloudinaryId="{{article.image.public_id}}"
+          autoFormat="true" height="480"></cdn-image>
 
         <div class="bottom column columns">
           <div class="column is-half">
             <h2>{{article.name}}</h2>
             <p class="bifocals hidden-not-mobile">{{article.description}}</p>
-            <a href="{{article.url}}" class="pro-font">
+            <a href="{{article.url}}" target="_blank" class="pro-font">
               read this article
+              <br />
+              <svg [attr.width]="linkWidth" height="11" fill="none" viewBox="0 0 212 11">
+                <path stroke="#000" d="M192.735 10.531L210.127.501H0" />
+              </svg>
+            </a>
+            <a href="{{article.dataUrl}}" target="_blank" class="pro-font" *ngIf="article.dataUrl">
+              view the data
               <br />
               <svg [attr.width]="linkWidth" height="11" fill="none" viewBox="0 0 212 11">
                 <path stroke="#000" d="M192.735 10.531L210.127.501H0" />
@@ -122,32 +153,58 @@
   <div class="container desktop">
     <div class="column is-offset-1-tablet is-offset-2-desktop is-9">
       <h1>
-        Our Guides
+        Our Guide
       </h1>
     </div>
-    
-    <!-- Guides -->
-      <div class="column is-offset-1-tablet is-offset-2-desktop">
-      <div class="guide columns is-multiline is-mobile is-centered" *ngFor="let guide of guides">
 
-        <div class="column center is-full-mobile is-centered is-5-tablet">
-          <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400"></cdn-image>
+    <!-- Guides -->
+    <div class="column is-offset-1-tablet is-offset-2-desktop">
+      <div class="guide columns is-multiline is-mobile" *ngFor="let guide of guides">
+
+        <div class="column center is-full-mobile is-5-tablet">
+          <cdn-image cloudinaryPrefix="/" cloudinaryId="{{guide.image.public_id}}" autoFormat="true" width="400">
+          </cdn-image>
         </div>
 
-        <div class="column is-11-mobile is-5-tablet">
+        <div class="column is-11-mobile is-4-tablet is-offset-1-tablet">
           <h2 class="bifocals">{{guide.name}}</h2>
           <p class="nunito">{{guide.description}}</p>
           <div class="btn">
-            <app-button href="{{guide.file.url}}" label="download .pdf">
+            <app-button href="{{guide.file.url}}" [newWindow]="true" label="download .pdf">
             </app-button>
           </div>
         </div>
       </div>
     </div>
+    <div class="column is-offset-1-tablet is-offset-2-desktop is-9">
+      <h1>
+        Our Syllabi
+      </h1>
+    </div>
 
+<!-- Syllabi -->
+<div class="column is-offset-1-tablet is-offset-2-desktop">
+  <div class="guide columns is-multiline is-mobile" *ngFor="let syllabus of syllabi">
+
+    <div class="column is-11-mobile is-5-tablet">
+      <h2 class="bifocals">{{syllabus.name}}</h2>
+      <p class="nunito">{{syllabus.description}}</p>
+      <div class="btn">
+        <app-button href="{{syllabus.file.url}}" label="download .pdf">
+        </app-button>
+      </div>
+    </div>
+
+    <div class="column center is-full-mobile is-4-tablet is-offset-1-tablet">
+      <cdn-image cloudinaryPrefix="/" cloudinaryId="{{syllabus.image.public_id}}" autoFormat="true" width="400">
+      </cdn-image>
+    </div>
+
+  </div>
+</div>
     <footer class="column is-offset-2">
       Make FOIA Work<br />
-      <span id="email">engagementlab@emerson.edu</span><br />
+      <span id="email">paul_mihailidis@emerson.edu</span><br />
       120 Boylston St. Boston, MA 02116
     </footer>
   </div>

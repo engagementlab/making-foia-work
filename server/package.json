@@ -21,7 +21,7 @@
     "express": "^4.16.4",
     "flat": "^4.1.0",
     "keystone-storage-adapter-azure": "^1.1.0",
-    "mongoose": "^5.4.17",
+    "mongoose": "^5.7.5",
     "redis": "^2.8.0",
     "underscore": "^1.9.1",
     "validator": "^10.9.0",
